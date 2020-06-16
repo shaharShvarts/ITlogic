@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/ITlogic/static/css/main.a9f87f7a.chunk.css",
+    "main.css": "/ITlogic/static/css/main.9724ee17.chunk.css",
     "main.js": "/ITlogic/static/js/main.37a98ad0.chunk.js",
     "main.js.map": "/ITlogic/static/js/main.37a98ad0.chunk.js.map",
     "runtime-main.js": "/ITlogic/static/js/runtime-main.a9de930a.js",
@@ -8,9 +8,9 @@
     "static/js/2.14ea989e.chunk.js": "/ITlogic/static/js/2.14ea989e.chunk.js",
     "static/js/2.14ea989e.chunk.js.map": "/ITlogic/static/js/2.14ea989e.chunk.js.map",
     "index.html": "/ITlogic/index.html",
-    "precache-manifest.73eae194f8cb903f0862bee556c68b36.js": "/ITlogic/precache-manifest.73eae194f8cb903f0862bee556c68b36.js",
+    "precache-manifest.16a7ef80c35d2bb5625d6f9b18716a76.js": "/ITlogic/precache-manifest.16a7ef80c35d2bb5625d6f9b18716a76.js",
     "service-worker.js": "/ITlogic/service-worker.js",
-    "static/css/main.a9f87f7a.chunk.css.map": "/ITlogic/static/css/main.a9f87f7a.chunk.css.map",
+    "static/css/main.9724ee17.chunk.css.map": "/ITlogic/static/css/main.9724ee17.chunk.css.map",
     "static/js/2.14ea989e.chunk.js.LICENSE.txt": "/ITlogic/static/js/2.14ea989e.chunk.js.LICENSE.txt",
     "static/media/signIn.css": "/ITlogic/static/media/bg_login.a3f80d0c.jpg",
     "static/media/phi_logo.png": "/ITlogic/static/media/phi_logo.73a281d9.png"
@@ -18,7 +18,7 @@
   "entrypoints": [
     "static/js/runtime-main.a9de930a.js",
     "static/js/2.14ea989e.chunk.js",
-    "static/css/main.a9f87f7a.chunk.css",
+    "static/css/main.9724ee17.chunk.css",
     "static/js/main.37a98ad0.chunk.js"
   ]
 }
