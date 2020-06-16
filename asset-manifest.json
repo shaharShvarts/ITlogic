@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/ITlogic/static/css/main.498f0741.chunk.css",
-    "main.js": "/ITlogic/static/js/main.37a98ad0.chunk.js",
-    "main.js.map": "/ITlogic/static/js/main.37a98ad0.chunk.js.map",
+    "main.js": "/ITlogic/static/js/main.d2afc3ae.chunk.js",
+    "main.js.map": "/ITlogic/static/js/main.d2afc3ae.chunk.js.map",
     "runtime-main.js": "/ITlogic/static/js/runtime-main.a9de930a.js",
     "runtime-main.js.map": "/ITlogic/static/js/runtime-main.a9de930a.js.map",
     "static/js/2.14ea989e.chunk.js": "/ITlogic/static/js/2.14ea989e.chunk.js",
     "static/js/2.14ea989e.chunk.js.map": "/ITlogic/static/js/2.14ea989e.chunk.js.map",
     "index.html": "/ITlogic/index.html",
-    "precache-manifest.4fef7bf8e5ccf5242beb8c2cd741478e.js": "/ITlogic/precache-manifest.4fef7bf8e5ccf5242beb8c2cd741478e.js",
+    "precache-manifest.4354ca35afdfc5281ca61d80e44d3ce1.js": "/ITlogic/precache-manifest.4354ca35afdfc5281ca61d80e44d3ce1.js",
     "service-worker.js": "/ITlogic/service-worker.js",
     "static/css/main.498f0741.chunk.css.map": "/ITlogic/static/css/main.498f0741.chunk.css.map",
     "static/js/2.14ea989e.chunk.js.LICENSE.txt": "/ITlogic/static/js/2.14ea989e.chunk.js.LICENSE.txt",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.a9de930a.js",
     "static/js/2.14ea989e.chunk.js",
     "static/css/main.498f0741.chunk.css",
-    "static/js/main.37a98ad0.chunk.js"
+    "static/js/main.d2afc3ae.chunk.js"
   ]
 }
