@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.b2f44b18.chunk.css",
-    "main.js": "/static/js/main.19049613.chunk.js",
-    "main.js.map": "/static/js/main.19049613.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.7a864974.js",
-    "runtime-main.js.map": "/static/js/runtime-main.7a864974.js.map",
-    "static/js/2.228859a7.chunk.js": "/static/js/2.228859a7.chunk.js",
-    "static/js/2.228859a7.chunk.js.map": "/static/js/2.228859a7.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.df53a7a8871db5ad511895288cac58da.js": "/precache-manifest.df53a7a8871db5ad511895288cac58da.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.b2f44b18.chunk.css.map": "/static/css/main.b2f44b18.chunk.css.map",
-    "static/js/2.228859a7.chunk.js.LICENSE.txt": "/static/js/2.228859a7.chunk.js.LICENSE.txt",
-    "static/media/signIn.css": "/static/media/bg_login.a3f80d0c.jpg",
-    "static/media/phi_logo.png": "/static/media/phi_logo.73a281d9.png"
+    "main.css": "/ITlogic/static/css/main.ccce7070.chunk.css",
+    "main.js": "/ITlogic/static/js/main.37a98ad0.chunk.js",
+    "main.js.map": "/ITlogic/static/js/main.37a98ad0.chunk.js.map",
+    "runtime-main.js": "/ITlogic/static/js/runtime-main.a9de930a.js",
+    "runtime-main.js.map": "/ITlogic/static/js/runtime-main.a9de930a.js.map",
+    "static/js/2.14ea989e.chunk.js": "/ITlogic/static/js/2.14ea989e.chunk.js",
+    "static/js/2.14ea989e.chunk.js.map": "/ITlogic/static/js/2.14ea989e.chunk.js.map",
+    "index.html": "/ITlogic/index.html",
+    "precache-manifest.95b9b5e415ce5cadf60228f6348d8934.js": "/ITlogic/precache-manifest.95b9b5e415ce5cadf60228f6348d8934.js",
+    "service-worker.js": "/ITlogic/service-worker.js",
+    "static/css/main.ccce7070.chunk.css.map": "/ITlogic/static/css/main.ccce7070.chunk.css.map",
+    "static/js/2.14ea989e.chunk.js.LICENSE.txt": "/ITlogic/static/js/2.14ea989e.chunk.js.LICENSE.txt",
+    "static/media/signIn.css": "/ITlogic/static/media/bg_login.a3f80d0c.jpg",
+    "static/media/phi_logo.png": "/ITlogic/static/media/phi_logo.73a281d9.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.7a864974.js",
-    "static/js/2.228859a7.chunk.js",
-    "static/css/main.b2f44b18.chunk.css",
-    "static/js/main.19049613.chunk.js"
+    "static/js/runtime-main.a9de930a.js",
+    "static/js/2.14ea989e.chunk.js",
+    "static/css/main.ccce7070.chunk.css",
+    "static/js/main.37a98ad0.chunk.js"
   ]
 }
