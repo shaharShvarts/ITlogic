@@ -24,11 +24,16 @@ function SignIn({ setLogin }) {
   };
 
   const handleChange = (e) => {
+    console.log("was change");
     const value = e.target.value;
     setState({
       ...state,
       [e.target.name]: value,
     });
+  };
+
+  const handleInput = () => {
+    console.log("was change from input");
   };
 
   return (
@@ -53,7 +58,7 @@ function SignIn({ setLogin }) {
           className="form"
           onSubmit={handelSubmit}
           runat="server"
-          autoComplete="off"
+          autoComplete="new-password"
         >
           <div className="inputBox">
             <input
@@ -61,8 +66,9 @@ function SignIn({ setLogin }) {
               name="email"
               value={state.email}
               onChange={handleChange}
+              onInput={handleInput}
               required
-              autoComplete="off"
+              autoComplete="new-password"
               runat="server"
             />
             <label>Username</label>
@@ -73,8 +79,9 @@ function SignIn({ setLogin }) {
               name="password"
               value={state.password}
               onChange={handleChange}
+              onInput={handleInput}
               required
-              autoComplete="off"
+              autoComplete="new-password"
               runat="server"
             />
             <label>Password</label>
