@@ -6,7 +6,7 @@ import "./signIn.css";
 function SignIn({ setLogin }) {
   const [opacity, SetOpacity] = useState(0);
   const [state, setState] = useState({
-    email: "shahar",
+    email: "",
     password: "",
   });
 
