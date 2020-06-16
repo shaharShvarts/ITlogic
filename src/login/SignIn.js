@@ -53,7 +53,7 @@ function SignIn({ setLogin }) {
           className="form"
           onSubmit={handelSubmit}
           runat="server"
-          autocomplete="off"
+          autoComplete="off"
         >
           <div className="inputBox">
             <input
@@ -62,7 +62,7 @@ function SignIn({ setLogin }) {
               value={state.email}
               onChange={handleChange}
               required
-              autocomplete="off"
+              autoComplete="off"
               runat="server"
             />
             <label>Username</label>
@@ -74,7 +74,7 @@ function SignIn({ setLogin }) {
               value={state.password}
               onChange={handleChange}
               required
-              autocomplete="off"
+              autoComplete="off"
               runat="server"
             />
             <label>Password</label>
