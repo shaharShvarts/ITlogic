@@ -125,11 +125,11 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   background-color: transparent !important;
-  transition: background-color 5000s ease-in-out 0s;
-  -webkit-box-shadow: 0 0 0 50px rgba(0, 0, 0, 0) inset;
-  -webkit-text-fill-color: rgb(255, 255, 255);
+  transition: background-color 5000s ease-in-out 0s !important;
+  -webkit-box-shadow: 0 0 0 50px rgba(0, 0, 0, 0) inset !important;
+  -webkit-text-fill-color: rgb(255, 255, 255) !important;
 }
-
+/* 
 input:-internal-autofill-selected {
   background-color: transparent !important;
-}
+} */
