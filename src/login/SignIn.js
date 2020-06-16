@@ -49,7 +49,12 @@ function SignIn({ setLogin }) {
         <img src={shark} />
         <h1>ITlogic's</h1>
         <h2>מערכת לניהול ציוד</h2>
-        <form className="form" onSubmit={handelSubmit} autocomplete="off">
+        <form
+          className="form"
+          onSubmit={handelSubmit}
+          runat="server"
+          autocomplete="off"
+        >
           <div className="inputBox">
             <input
               type="text"
@@ -58,6 +63,7 @@ function SignIn({ setLogin }) {
               onChange={handleChange}
               required
               autocomplete="off"
+              runat="server"
             />
             <label>Username</label>
           </div>
@@ -69,6 +75,7 @@ function SignIn({ setLogin }) {
               onChange={handleChange}
               required
               autocomplete="off"
+              runat="server"
             />
             <label>Password</label>
           </div>
