@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/ITlogic/precache-manifest.4354ca35afdfc5281ca61d80e44d3ce1.js"
+  "/ITlogic/precache-manifest.07295fb320cbfcbb85383fdc84448df6.js"
 );
 
 self.addEventListener('message', (event) => {

@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c56bd3d9ed7aa33f15f7bb02e31b6c67",
+    "revision": "89111359a740f928c2e7182983dcb36b",
     "url": "/ITlogic/index.html"
   },
   {
-    "revision": "84c5de253c5a78379c02",
+    "revision": "6a07335d8e4ef98aded6",
     "url": "/ITlogic/static/css/main.498f0741.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ITlogic/static/js/2.14ea989e.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "84c5de253c5a78379c02",
-    "url": "/ITlogic/static/js/main.d2afc3ae.chunk.js"
+    "revision": "6a07335d8e4ef98aded6",
+    "url": "/ITlogic/static/js/main.a0b629fb.chunk.js"
   },
   {
     "revision": "380236eaa31bf0053a6a",
