@@ -1,25 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { HashRouter } from "react-router-dom";
+
+import Notifications from "./components/Notifications";
+import AsideBar from "./components/AsideBar";
+import Main from "./pages/Main";
+import Footer from "./components/Footer";
+
+import SignIn from "./login/SignIn";
+
+// import { GlobalProvider } from "./components/context/GlobalState";
+
+import "./reset.css";
+import "./app.css";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  const [login, setLogin] = useState(
+    sessionStorage.getItem("loginSession") || ""
+  );
+
+  return login ? (
+    <HashRouter basename="/">
+      {/* <GlobalProvider> */}
+      <main>
+        <Notifications />
+        <AsideBar />
+        <Main />
+        <Footer />
+      </main>
+      {/* </GlobalProvider> */}
+    </HashRouter>
+  ) : (
+    <SignIn setLogin={setLogin} />
   );
 }
 

@@ -20,10 +20,12 @@
 
 html,
 body {
+  direction: rtl;
   min-height: 100vh;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  height: 100vh;
   font-weight: normal;
   font-size: 100%;
   -webkit-text-size-adjust: 100%;
@@ -59,7 +61,6 @@ textarea {
   font-size: 100%;
   margin: 0;
   vertical-align: baseline;
-  *vertical-align: middle;
 }
 
 button,
