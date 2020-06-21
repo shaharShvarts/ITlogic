@@ -1,35 +1,31 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9a9f9e078aa394776076f2f4944d5f7d",
+    "revision": "4ab6cf2af2a17d48454a44d87b391b9f",
     "url": "/ITlogic/index.html"
   },
   {
-    "revision": "36a15370b52cc0a7c904",
+    "revision": "8b624476e0dddc663c1e",
     "url": "/ITlogic/static/css/2.85f3cfdb.chunk.css"
   },
   {
-    "revision": "b86dccdf61b1cecaf104",
-    "url": "/ITlogic/static/css/main.f248fdfa.chunk.css"
+    "revision": "1f520158e4282df4fb58",
+    "url": "/ITlogic/static/css/main.5934d8ca.chunk.css"
   },
   {
-    "revision": "36a15370b52cc0a7c904",
-    "url": "/ITlogic/static/js/2.86e5f444.chunk.js"
+    "revision": "8b624476e0dddc663c1e",
+    "url": "/ITlogic/static/js/2.8b24ab1c.chunk.js"
   },
   {
     "revision": "5e9b6f5c16b720e8a86875f97734673e",
-    "url": "/ITlogic/static/js/2.86e5f444.chunk.js.LICENSE.txt"
+    "url": "/ITlogic/static/js/2.8b24ab1c.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b86dccdf61b1cecaf104",
-    "url": "/ITlogic/static/js/main.4b082ed2.chunk.js"
+    "revision": "1f520158e4282df4fb58",
+    "url": "/ITlogic/static/js/main.fb127f03.chunk.js"
   },
   {
     "revision": "380236eaa31bf0053a6a",
     "url": "/ITlogic/static/js/runtime-main.a9de930a.js"
-  },
-  {
-    "revision": "a3f80d0c995e007b773b201debdbb720",
-    "url": "/ITlogic/static/media/bg_login.a3f80d0c.jpg"
   },
   {
     "revision": "9aaa352a0a45c0c47cf60879d3dbfed0",
