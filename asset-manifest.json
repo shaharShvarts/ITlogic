@@ -1,24 +1,28 @@
 {
   "files": {
-    "main.css": "/ITlogic/static/css/main.84937ce8.chunk.css",
-    "main.js": "/ITlogic/static/js/main.4de89928.chunk.js",
-    "main.js.map": "/ITlogic/static/js/main.4de89928.chunk.js.map",
+    "main.css": "/ITlogic/static/css/main.f248fdfa.chunk.css",
+    "main.js": "/ITlogic/static/js/main.4b082ed2.chunk.js",
+    "main.js.map": "/ITlogic/static/js/main.4b082ed2.chunk.js.map",
     "runtime-main.js": "/ITlogic/static/js/runtime-main.a9de930a.js",
     "runtime-main.js.map": "/ITlogic/static/js/runtime-main.a9de930a.js.map",
-    "static/js/2.14ea989e.chunk.js": "/ITlogic/static/js/2.14ea989e.chunk.js",
-    "static/js/2.14ea989e.chunk.js.map": "/ITlogic/static/js/2.14ea989e.chunk.js.map",
+    "static/css/2.85f3cfdb.chunk.css": "/ITlogic/static/css/2.85f3cfdb.chunk.css",
+    "static/js/2.86e5f444.chunk.js": "/ITlogic/static/js/2.86e5f444.chunk.js",
+    "static/js/2.86e5f444.chunk.js.map": "/ITlogic/static/js/2.86e5f444.chunk.js.map",
     "index.html": "/ITlogic/index.html",
-    "precache-manifest.85ed7c3302a1547757261e80f869ce25.js": "/ITlogic/precache-manifest.85ed7c3302a1547757261e80f869ce25.js",
+    "precache-manifest.23308e0e3f062447674fe95e8fd84b9d.js": "/ITlogic/precache-manifest.23308e0e3f062447674fe95e8fd84b9d.js",
     "service-worker.js": "/ITlogic/service-worker.js",
-    "static/css/main.84937ce8.chunk.css.map": "/ITlogic/static/css/main.84937ce8.chunk.css.map",
-    "static/js/2.14ea989e.chunk.js.LICENSE.txt": "/ITlogic/static/js/2.14ea989e.chunk.js.LICENSE.txt",
-    "static/media/signIn.css": "/ITlogic/static/media/bg_login.a3f80d0c.jpg",
-    "static/media/phi_logo.png": "/ITlogic/static/media/phi_logo.73a281d9.png"
+    "static/css/2.85f3cfdb.chunk.css.map": "/ITlogic/static/css/2.85f3cfdb.chunk.css.map",
+    "static/css/main.f248fdfa.chunk.css.map": "/ITlogic/static/css/main.f248fdfa.chunk.css.map",
+    "static/js/2.86e5f444.chunk.js.LICENSE.txt": "/ITlogic/static/js/2.86e5f444.chunk.js.LICENSE.txt",
+    "static/media/SignIn.css": "/ITlogic/static/media/bg_login.a3f80d0c.jpg",
+    "static/media/phi_logo.svg": "/ITlogic/static/media/phi_logo.9aaa352a.svg",
+    "static/media/slick-theme.css": "/ITlogic/static/media/slick.f97e3bbf.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.a9de930a.js",
-    "static/js/2.14ea989e.chunk.js",
-    "static/css/main.84937ce8.chunk.css",
-    "static/js/main.4de89928.chunk.js"
+    "static/css/2.85f3cfdb.chunk.css",
+    "static/js/2.86e5f444.chunk.js",
+    "static/css/main.f248fdfa.chunk.css",
+    "static/js/main.4b082ed2.chunk.js"
   ]
 }
