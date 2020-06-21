@@ -1,36 +1,35 @@
 import React, { useState } from "react";
-import { HashRouter } from "react-router-dom";
+import { HashRouter, Redirect } from "react-router-dom";
 
-import Notifications from "./components/Notifications";
-import AsideBar from "./components/AsideBar";
-import Main from "./pages/Main";
-import Footer from "./components/Footer";
+import Navbar from "./layout/Navbar";
+import Header from "./layout/Header";
+import Pages from "./layout/Pages";
 
 import SignIn from "./login/SignIn";
 
 // import { GlobalProvider } from "./components/context/GlobalState";
 
 import "./reset.css";
-import "./app.css";
+import "./App.css";
 
 function App() {
   const [login, setLogin] = useState(
     sessionStorage.getItem("loginSession") || ""
   );
 
-  return login ? (
-    <HashRouter basename="/">
-      {/* <GlobalProvider> */}
-      <main>
-        <Notifications />
-        <AsideBar />
-        <Main />
-        <Footer />
-      </main>
-      {/* </GlobalProvider> */}
+  if (!login) {
+    return <SignIn setLogin={setLogin} />;
+  }
+
+  return (
+    <HashRouter>
+      <Redirect to="/" />
+      <div className="wrapper">
+        <Navbar />
+        <Header />
+        <Pages />
+      </div>
     </HashRouter>
-  ) : (
-    <SignIn setLogin={setLogin} />
   );
 }
 

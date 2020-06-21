@@ -1,0 +1,125 @@
+.dashboard {
+  /* position: relative;
+  display: flex;
+  flex-direction: row;
+  height: calc(100vh - 100px);
+  align-content: space-evenly;
+  flex-wrap: wrap;
+  width: calc(100vw - 328px); */
+}
+
+.dashboard .slider-wrap {
+  position: relative;
+  width: calc(100vw - 460px);
+  margin: 20px auto 40px;
+}
+
+.slick-prev,
+.slick-next {
+  width: 40px;
+  height: 40px;
+}
+.slick-prev:before,
+.slick-next:before {
+  font-size: 40px;
+  color: #8cb23c;
+}
+
+.slick-prev {
+  left: -50px;
+}
+
+.slick-next {
+  right: -50px;
+}
+
+.slick-dots li button:before {
+  font-family: "slick";
+  font-size: 12px;
+  line-height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  content: "•";
+  text-align: center;
+  opacity: 0.25;
+  color: black;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.dashboard .card {
+  width: 150px;
+  height: 150px;
+  flex-direction: column;
+  display: flex;
+  justify-content: space-evenly;
+  background: white;
+  margin: 10px;
+  float: left;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.5s ease;
+  border-radius: 10px;
+  border: 3px solid #fff;
+}
+
+.dashboard .card:hover,
+.dashboard .card.active {
+  border: 3px solid var(--accent-color);
+}
+
+.dashboard .card img {
+  object-fit: contain;
+}
+
+.dashboard .card h1 {
+  font-size: 16px;
+  text-align: center;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  color: var(--accent-color);
+}
+
+.dashboard .tableRow {
+  display: table;
+  border-collapse: separate;
+}
+
+@media (max-width: 1024px) {
+  .dashboard .slider-wrap {
+    margin: -5px auto 5px;
+  }
+}
+
+/*.dashboard .slider {
+   width: 870px;
+  height: 170px;
+  margin: 50px auto;
+  padding: 0 10px;
+  overflow: hidden; 
+}*/
+
+/* .dashboard .prev,
+.dashboard .next {
+  position: absolute;
+  font-size: 50px;
+  color: #8a8383;
+  top: 50%;
+  transform: translateY(-25px);
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.dashboard .prev:hover,
+.dashboard .next:hover {
+  color: var(--accent-color);
+  font-size: 55px;
+}
+
+.dashboard .next {
+  left: 0;
+} */

@@ -1,0 +1,37 @@
+.layout-header {
+  grid-area: layout-header;
+  background-color: white;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.layout-header .info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24px;
+  width: 150px;
+  margin: 0 30px;
+}
+
+.layout-header #avatar,
+.layout-header #messages,
+.layout-header #notifications,
+.layout-header #sign-out {
+  cursor: pointer;
+  color: #8a8383;
+  transition: color 0.5s ease;
+}
+
+.layout-header #avatar:hover,
+.layout-header #messages:hover,
+.layout-header #notifications:hover,
+.layout-header #sign-out:hover {
+  color: var(--accent-color);
+}
+
+.layout-header #avatar img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}

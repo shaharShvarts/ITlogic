@@ -1,10 +1,14 @@
+:root {
+  --accent-color: #0379af;
+}
+
 .container {
   display: flex;
   color: #fff;
   height: 100vh;
   align-items: center;
   flex-direction: column;
-  justify-content: start;
+  justify-content: flex-start;
   font-family: "M PLUS 1p", sans-serif;
   background: url(../img/bg_login.jpg) center center/cover;
 }
@@ -29,12 +33,16 @@
 
 .error-box .close {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  right: 25px;
+  font-size: 20px;
+}
+
+.message {
+  margin-right: 50px;
 }
 
 .error-box .close:hover {
-  color: #0379af;
+  color: var(--accent-color);
   cursor: pointer;
 }
 
@@ -67,6 +75,16 @@
   position: relative;
   direction: ltr;
   outline: none;
+}
+
+.box .show-password {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.box .show-password:hover {
+  color: #03a9f4;
 }
 
 .box .inputBox input {
@@ -104,20 +122,25 @@
 
 .box button {
   width: 100%;
-  background-color: #03a9f4;
   padding: 0.875em;
   text-transform: uppercase;
-  color: #fff;
   font-weight: 700;
   cursor: pointer;
   border-radius: 0.3em;
   transition: all 0.8s ease;
+  position: relative;
+  background-color: #fff;
+  color: var(--accent-color);
+}
+
+.box button p {
+  display: inline-block;
 }
 
 .box button:hover,
 .box button:focus {
-  background-color: #fff;
-  color: #0379af;
+  color: #fff;
+  background-color: var(--accent-color);
 }
 
 /* autofill */
@@ -127,11 +150,31 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   background-color: transparent !important;
   transition: background-color 5000s ease-in-out 0s !important;
-  -webkit-box-shadow: 0 0 0 50px rgba(0, 0, 0, 0) inset !important;
+  box-shadow: 0 0 0 50px rgba(0, 0, 0, 0) inset !important;
   -webkit-text-fill-color: rgb(255, 255, 255) !important;
 }
 
-@media (max-width: 360px) {
+input::-ms-reveal {
+  display: none;
+}
+
+.box .fa-spinner {
+  animation: spin 1s linear infinite;
+  position: absolute;
+  left: 50px;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 440px) {
   .error-box,
   .box {
     width: 250px;
@@ -150,5 +193,10 @@ input:-webkit-autofill:active {
 
   .error-box {
     font-size: 0.8rem;
+  }
+
+  .message {
+    margin-right: 24px;
+    font-size: 12px;
   }
 }

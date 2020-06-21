@@ -1,0 +1,41 @@
+.layout-navbar {
+  font-weight: 700;
+  grid-area: layout-navbar;
+  background-color: var(--layout-navbar);
+}
+
+.layout-navbar img {
+  max-width: 150px;
+  height: 150px;
+  margin: 30px auto;
+  border: 2px solid #3a2e2e;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.layout-navbar nav a {
+  display: block;
+  padding: 15px 30px;
+  color: #fff;
+  transition: all 0.5s ease;
+}
+
+.layout-navbar a.active {
+  color: var(--accent-color);
+  padding: 15px 30px 15px 25px;
+  border-right: 5px solid var(--accent-color);
+  background-color: var(--active);
+}
+
+.layout-navbar nav a:hover {
+  background-color: var(--active);
+  color: var(--accent-color);
+  padding: 15px 30px 15px 25px;
+  border-right: 5px solid var(--accent-color);
+}
+
+.layout-navbar .fas {
+  display: inline-block;
+  width: 30px;
+  margin: 0 0.8rem;
+}

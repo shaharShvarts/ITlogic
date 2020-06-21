@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import shark from "../img/shark512.png";
 
-import "./signIn.css";
+import "./SignIn.css";
 
 function SignIn({ setLogin }) {
-  const [opacity, SetOpacity] = useState(0);
+  const [opacity, setOpacity] = useState(0);
+  const [loading, setLoading] = useState(false);
+  const [showPws, setShowPws] = useState(false);
   const [state, setState] = useState({
     email: "",
     password: "",
@@ -12,19 +14,21 @@ function SignIn({ setLogin }) {
 
   const handelSubmit = (e) => {
     e.preventDefault();
-    state.email === "shahar" && state.password === "12345"
-      ? setLogin(
-          sessionStorage.setItem(
-            "loginSession",
-            "-uZ}~^Y$1X&C&&-uZ}~^Y$1X&C@85"
-          ),
-          window.location.reload()
-        )
-      : SetOpacity(1);
+    setLoading(true);
+    setTimeout(() => {
+      state.email === "shahar" && state.password === "12345"
+        ? setLogin(
+            sessionStorage.setItem(
+              "loginSession",
+              "-uZ}~^Y$1X&C&&-uZ}~^Y$1X&C@85"
+            ),
+            window.location.reload()
+          )
+        : setOpacity(1, setLoading(false));
+    }, 3000);
   };
 
   const handleChange = (e) => {
-    console.log("was change");
     const value = e.target.value;
     setState({
       ...state,
@@ -32,8 +36,8 @@ function SignIn({ setLogin }) {
     });
   };
 
-  const handleInput = () => {
-    console.log("was change from input");
+  const showHidePws = () => {
+    setShowPws(!showPws);
   };
 
   return (
@@ -45,13 +49,13 @@ function SignIn({ setLogin }) {
           opacity: opacity,
         }}
       >
-        <i className="fas fa-times close" onClick={() => SetOpacity(0)} />
-        <p>שם משתמש או סיסמא לא נכונים</p>
+        <i className="fas fa-times close" onClick={() => setOpacity(0)} />
+        <p className="message">שם משתמש או סיסמא לא נכונים</p>
         <i className="fas fa-exclamation-triangle alert" />
       </section>
 
       <div className="box">
-        <img src={shark} />
+        <img src={shark} alt="shark" />
         <h1>ITlogic's</h1>
         <h2>מערכת לניהול ציוד</h2>
         <form
@@ -66,27 +70,34 @@ function SignIn({ setLogin }) {
               name="email"
               value={state.email}
               onChange={handleChange}
-              onInput={handleInput}
               required
               autoComplete="new-password"
-              runat="server"
             />
             <label>Username</label>
           </div>
           <div className="inputBox">
             <input
-              type="password"
+              type={`${!showPws ? "password" : "text"}`}
               name="password"
               value={state.password}
               onChange={handleChange}
-              onInput={handleInput}
               required
               autoComplete="new-password"
-              runat="server"
             />
+            {state.password && (
+              <i
+                className={`fas fa-${
+                  !showPws ? "eye" : "eye-slash"
+                } show-password`}
+                onClick={showHidePws}
+              ></i>
+            )}
             <label>Password</label>
           </div>
-          <button>sing in</button>
+          <button>
+            <p>sing in</p>
+            {loading && <i className="fas fa-spinner"></i>}
+          </button>
         </form>
       </div>
     </div>
