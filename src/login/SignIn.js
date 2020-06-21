@@ -55,7 +55,8 @@ function SignIn({ setLogin }) {
       </section>
 
       <div className="box">
-        <img src={shark} alt="shark" />
+        {/* <img src={shark} alt="shark" /> */}
+        <i class="fas fa-laptop logo"></i>
         <h1>ITlogic's</h1>
         <h2>מערכת לניהול ציוד</h2>
         <form

@@ -10,7 +10,9 @@
   flex-direction: column;
   justify-content: flex-start;
   font-family: "M PLUS 1p", sans-serif;
-  background: url(../img/bg_login.jpg) center center/cover;
+  /* background: url(../img/bg_login.jpg) center center/cover; */
+  /* background-image: linear-gradient(45deg, #2a9f45, #92cf50); */
+  background-image: linear-gradient(45deg, #5a5a5a, #dedede);
 }
 
 .error-box,
@@ -50,9 +52,18 @@
   margin: 0 10px;
 }
 
-.box img {
+/* .box img {
   margin: auto;
   height: 100px;
+} */
+
+i.fas.fa-laptop.logo {
+  font-size: 64px;
+  width: 100%;
+  text-align: center;
+  display: inline-block;
+  border-bottom: 10px;
+  padding: 10px;
 }
 
 .box h1,
