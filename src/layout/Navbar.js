@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import logo from "../img/phi_logo.svg";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 
 import "./Navbar.css";
 
@@ -15,13 +15,13 @@ function Navbar() {
       </a>
       <nav>
         <li>
-          <Link
+          <Redirect
             to="/"
             className={active === "dashboard" ? "active" : "false"}
             onClick={() => setActive("dashboard")}
           >
             <i className="fas fa-tachometer-alt"></i>דף הבית
-          </Link>
+          </Redirect>
         </li>
         <li>
           <Link
