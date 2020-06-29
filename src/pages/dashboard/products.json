@@ -1,0 +1,71 @@
+[
+  {
+    "id": 1,
+    "userId": "028584605",
+    "categoryId": 1,
+    "model": "HP - Elitebook 840 G3",
+    "sn": "5CG7314RGS",
+    "notes": "",
+    "image": "",
+    "createdBy": "מיטל",
+    "createdAt": "23/06/2020",
+    "modifiedBy": "מיטל",
+    "modifiedAt": "23/06/2020"
+  },
+  {
+    "id": 2,
+    "userId": "028584605",
+    "categoryId": 2,
+    "model": "מסך 27'",
+    "sn": "11221133",
+    "notes": "",
+    "image": "",
+    "createdBy": "שובל",
+    "createdAt": "23/06/2020",
+    "modifiedBy": "מיטל",
+    "modifiedAt": "23/06/2020",
+    "assignedTo": 1
+  },
+  {
+    "id": 3,
+    "userId": "028584605",
+    "categoryId": 2,
+    "model": "מסך 24'",
+    "sn": "dxgfg855",
+    "notes": "",
+    "image": "",
+    "createdBy": "מיטל",
+    "createdAt": "23/06/2020",
+    "modifiedBy": "מיטל",
+    "modifiedAt": "23/06/2020",
+    "assignedTo": 1
+  },
+  {
+    "id": 4,
+    "userId": "028584605",
+    "categoryId": 3,
+    "model": "Logitech MX Master",
+    "sn": "xxx888sdvbg",
+    "notes": "",
+    "image": "",
+    "createdBy": "שובל",
+    "createdAt": "23/06/2020",
+    "modifiedBy": "מיטל",
+    "modifiedAt": "23/06/2020",
+    "assignedTo": 1
+  },
+  {
+    "id": 5,
+    "userId": "028584605",
+    "categoryId": 4,
+    "model": "dell Core I7-8700",
+    "sn": "mt-7060-OP7060-7056",
+    "notes": "",
+    "image": "",
+    "createdBy": "מיטל",
+    "createdAt": "23/06/2020",
+    "modifiedBy": "מיטל",
+    "modifiedAt": "23/06/2020",
+    "assignedTo": 1
+  }
+]

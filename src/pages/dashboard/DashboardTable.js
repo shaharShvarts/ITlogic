@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Table from "@material-ui/core/Table";
@@ -8,14 +8,6 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TablePagination from "@material-ui/core/TablePagination";
 import TableRow from "@material-ui/core/TableRow";
-
-const columns = [
-  { id: "fullName", label: "שם", minWidth: 100 },
-  { id: "class", label: "אגף", minWidth: 100 },
-  { id: "model", label: "מוצר", minWidth: 100 },
-  { id: "sn", label: "מספר סידורי", minWidth: 100 },
-  { id: "primary", label: "ראשי", minWidth: 20 },
-];
 
 const useStyles = makeStyles({
   root: {
@@ -43,18 +35,13 @@ const useStyles = makeStyles({
     "& .fa-exclamation-triangle": {
       color: "#FF5722",
     },
-
-    //   .empty-data span {
-    //     margin: 20px;
-    //   }
   },
 });
 
-const PhiStock = ({ table }) => {
-  //   console.log(table);
+const DashboardTable = ({ table, columns }) => {
   const classes = useStyles();
-  const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(10);
+  const [page, setPage] = useState(0);
+  const [rowsPerPage, setRowsPerPage] = useState(10);
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -77,8 +64,8 @@ const PhiStock = ({ table }) => {
                   align="center"
                   style={{
                     minWidth: column.minWidth,
-                    backgroundColor: "#8cb23c",
-                    color: "#fff",
+                    backgroundColor: "var(--accent-color)",
+                    color: "#000",
                     fontWeight: "bold",
                   }}
                 >
@@ -109,9 +96,9 @@ const PhiStock = ({ table }) => {
                 })}
             {table.length === 0 && (
               <TableRow>
-                <TableCell className={classes.emptyData} colspan="100%">
+                <TableCell className={classes.emptyData} colSpan="100%">
                   <span>אין נתונים להצגה</span>
-                  <i class="fas fa-exclamation-triangle"></i>
+                  <i className="fas fa-exclamation-triangle"></i>
                 </TableCell>
               </TableRow>
             )}
@@ -132,4 +119,4 @@ const PhiStock = ({ table }) => {
   );
 };
 
-export default PhiStock;
+export default DashboardTable;

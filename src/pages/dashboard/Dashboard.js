@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import Slider from "react-slick";
 
 // import Card from "./Card";
 import CardData from "./card.json";
 import tableData from "./tableData.json";
 
-import PhiStock from "../PhiStock";
+import DashboardTable from "./DashboardTable";
 
 // Css
 import "slick-carousel/slick/slick.css";
@@ -17,7 +17,15 @@ const Dashboard = () => {
   const [active, setActive] = useState("laptop");
   const [table, setTable] = useState([]);
 
-  const buildRow = () => {
+  const columns = [
+    { id: "fullName", label: "שם", minWidth: 100 },
+    { id: "class", label: "אגף", minWidth: 100 },
+    { id: "model", label: "מוצר", minWidth: 100 },
+    { id: "sn", label: "מספר סידורי", minWidth: 100 },
+    { id: "primary", label: "ראשי", minWidth: 20 },
+  ];
+
+  const buildRow = useCallback(() => {
     let tableRow = [];
 
     tableData.forEach((user) => {
@@ -52,19 +60,19 @@ const Dashboard = () => {
       }
     });
     setTable(tableRow);
-  };
+  }, [active]);
 
   useEffect(() => {
     buildRow();
-  }, [active]);
+  }, [active, buildRow]);
 
   useEffect(() => {
     setData(CardData);
     buildRow();
-  }, [data]);
+  }, [data, buildRow]);
 
   let settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 6,
@@ -75,7 +83,7 @@ const Dashboard = () => {
       {
         breakpoint: 1441,
         settings: {
-          dots: true,
+          dots: false,
           infinite: true,
           speed: 500,
           slidesToShow: 5,
@@ -87,7 +95,7 @@ const Dashboard = () => {
       {
         breakpoint: 1281,
         settings: {
-          dots: true,
+          dots: false,
           infinite: true,
           speed: 500,
           slidesToShow: 3,
@@ -154,7 +162,7 @@ const Dashboard = () => {
           </Slider>
         </ul>
       </div>
-      <PhiStock table={table} />
+      <DashboardTable table={table} columns={columns} />
     </div>
   );
 };

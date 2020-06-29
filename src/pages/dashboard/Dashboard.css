@@ -11,7 +11,7 @@
 .dashboard .slider-wrap {
   position: relative;
   width: calc(100vw - 460px);
-  margin: 20px auto 40px;
+  margin: 40px auto;
 }
 
 .empty-data {

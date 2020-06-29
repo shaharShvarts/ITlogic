@@ -6,6 +6,7 @@ import "./Navbar.css";
 
 function Navbar() {
   const [active, setActive] = useState("dashboard");
+  const [subActive, setSubActive] = useState("users");
 
   return (
     <section className="layout-navbar">
@@ -24,7 +25,7 @@ function Navbar() {
         </li>
         <li>
           <Link
-            to="order"
+            to="/order"
             className={active === "order" ? "active" : "false"}
             onClick={() => setActive("order")}
           >
@@ -33,7 +34,7 @@ function Navbar() {
         </li>
         <li>
           <Link
-            to="stock"
+            to="/stock"
             className={active === "stock" ? "active" : "false"}
             onClick={() => setActive("stock")}
           >
@@ -42,16 +43,50 @@ function Navbar() {
         </li>
         <li>
           <Link
-            to="administration"
+            to="/administration/users"
             className={active === "administration" ? "active" : "false"}
-            onClick={() => setActive("administration")}
+            onClick={() => {
+              setActive("administration");
+              setSubActive("users");
+            }}
           >
             <i className="fas fa-box"></i>אדמיניסטרציה
           </Link>
+          {active === "administration" && (
+            <ul>
+              <li>
+                <Link
+                  to="/administration/users"
+                  className={subActive === "users" ? "active" : "false"}
+                  onClick={() => setSubActive("users")}
+                >
+                  <i className="fas fa-chevron-left"></i>משתמשים
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/administration/categories"
+                  className={subActive === "categories" ? "active" : "false"}
+                  onClick={() => setSubActive("categories")}
+                >
+                  <i className="fas fa-chevron-left"></i>ניהול קטגוריות
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/administration/products"
+                  className={subActive === "products" ? "active" : "false"}
+                  onClick={() => setSubActive("products")}
+                >
+                  <i className="fas fa-chevron-left"></i>ניהול מוצרים
+                </Link>
+              </li>
+            </ul>
+          )}
         </li>
         <li>
           <Link
-            to="reports"
+            to="/reports"
             className={active === "reports" ? "active" : "false"}
             onClick={() => setActive("reports")}
           >
@@ -59,6 +94,7 @@ function Navbar() {
           </Link>
         </li>
       </nav>
+      <p className="version">Version 1.0.1</p>
     </section>
   );
 }

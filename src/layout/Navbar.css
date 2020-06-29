@@ -2,6 +2,8 @@
   font-weight: 700;
   grid-area: layout-navbar;
   background-color: var(--layout-navbar);
+  display: flex;
+  flex-direction: column;
 }
 
 .layout-navbar img {
@@ -38,4 +40,35 @@
   display: inline-block;
   width: 30px;
   margin: 0 0.8rem;
+}
+
+/* Sub ul */
+.layout-navbar nav ul a {
+  display: block;
+  padding: 15px 60px 15px 25px;
+  color: #fff;
+  transition: all 0.5s ease;
+}
+
+.layout-navbar nav ul a.active {
+  color: var(--accent-color);
+  padding: 15px 60px 15px 25px;
+  border-right: 5px solid var(--accent-color);
+  background-color: var(--active);
+}
+
+.layout-navbar nav ul a:hover {
+  background-color: var(--active);
+  color: var(--accent-color);
+  padding: 15px 60px 15px 25px;
+  border-right: 5px solid var(--accent-color);
+}
+
+.version {
+  text-align: center;
+  margin-top: auto;
+  color: #fff;
+  padding-bottom: 10px;
+  font-size: 14px;
+  font-weight: 500;
 }

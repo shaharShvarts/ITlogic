@@ -3,6 +3,8 @@
   background-color: white;
   display: flex;
   justify-content: flex-end;
+  box-shadow: 0px 0px 6px 0px #100c0c;
+  z-index: 1;
 }
 
 .layout-header .info {

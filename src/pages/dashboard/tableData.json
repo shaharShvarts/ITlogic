@@ -3,18 +3,25 @@
     "id": "028584605",
     "fullName": " מירב קרת",
     "class": "תפעול",
+    "job": "",
     "laptop": [
       {
+        "id": 1,
         "primary": true,
+        "label": "מחשב נייד",
         "model": "HP - Elitebook 840 G3",
-        "sn": "5CG7314RGS"
+        "sn": "5CG7314RGS",
+        "date": "22/06/2020"
       }
     ],
     "screen": [
       {
+        "id": 2,
+        "label": "מסך",
         "primary": true,
         "model": "מסך 27'",
-        "sn": "11221133"
+        "sn": "11221133",
+        "date": "22/06/2020"
       }
     ]
   },
@@ -22,11 +29,13 @@
     "id": "310794623",
     "fullName": "032390403",
     "class": "תפעול",
+    "job": "",
     "laptop": [
       {
         "primary": true,
         "model": "HP - Elitebook 840 G3",
-        "sn": "SCG7236BBB"
+        "sn": "SCG7236BBB",
+        "date": "22/06/2020"
       }
     ]
   },
@@ -34,11 +43,13 @@
     "id": "028003754",
     "fullName": "300178977",
     "class": "תפעול",
+    "job": "",
     "laptop": [
       {
         "primary": true,
         "model": "Dell - E5450",
-        "sn": "6JZYD72"
+        "sn": "6JZYD72",
+        "date": "22/06/2020"
       }
     ]
   },
@@ -46,11 +57,13 @@
     "id": "311756936",
     "fullName": "Adi Dulberg",
     "class": "טכנולוגיות",
+    "job": "",
     "laptop": [
       {
         "primary": true,
         "model": "Dell - E5450",
-        "sn": "969RR72"
+        "sn": "969RR72",
+        "date": "22/06/2020"
       }
     ]
   },
@@ -58,11 +71,13 @@
     "id": "016428591",
     "fullName": "ELI COHEN",
     "class": "טכנולוגיות",
+    "job": "",
     "laptop": [
       {
         "primary": true,
         "model": "HP - Elitebook 840 G3",
-        "sn": ""
+        "sn": "",
+        "date": "22/06/2020"
       }
     ]
   },
@@ -70,6 +85,7 @@
     "id": "200535250",
     "fullName": "Zohar Bodinshtain",
     "class": "רדיו",
+    "job": "",
     "laptop": [
       {
         "primary": true,
@@ -82,6 +98,7 @@
     "id": "024522120",
     "fullName": "אבי בודניק",
     "class": "תפעול",
+    "job": "",
     "laptop": [
       {
         "primary": true,
@@ -94,6 +111,7 @@
     "id": "059237941",
     "fullName": "אבי טל",
     "class": "טכנולוגיות",
+    "job": "",
     "laptop": [
       {
         "primary": true,
@@ -106,6 +124,7 @@
     "id": "023968142",
     "fullName": "אבי פדר",
     "class": "תפעול",
+    "job": "",
     "laptop": [
       {
         "primary": true,
@@ -118,6 +137,7 @@
     "id": "025386210",
     "fullName": "אבי שנידרמן",
     "class": "טכנולוגיות",
+    "job": "",
     "laptop": [
       {
         "primary": true,
@@ -130,6 +150,7 @@
     "id": "038550364",
     "fullName": "אבירם נדלר",
     "class": "רדיו",
+    "job": "",
     "laptop": [
       {
         "primary": true,
@@ -142,6 +163,7 @@
     "id": "053416350",
     "fullName": "אבישי גיל",
     "class": "תפעול",
+    "job": "",
     "laptop": [
       {
         "primary": true,
@@ -154,6 +176,7 @@
     "id": "025752700",
     "fullName": "אדי אליהו",
     "class": "טכנולוגיות",
+    "job": "",
     "laptop": [
       {
         "primary": true,
@@ -166,6 +189,7 @@
     "id": "027824101",
     "fullName": "אהוד גרעיני",
     "class": "הרכשה בינוי ורישוי",
+    "job": "",
     "laptop": [
       {
         "primary": true,
@@ -178,6 +202,7 @@
     "id": "024666745",
     "fullName": "אופיר בירנבוים",
     "class": "הרכשה בינוי ורישוי",
+    "job": "",
     "laptop": [
       {
         "primary": true,
@@ -190,6 +215,7 @@
     "id": "017744871",
     "fullName": "אורי גורן",
     "class": "תפעול",
+    "job": "",
     "laptop": [
       {
         "primary": true,
@@ -202,6 +228,7 @@
     "id": "059799833",
     "fullName": "אורי ורטהיים",
     "class": "תפעול",
+    "job": "",
     "laptop": [
       {
         "primary": true,
@@ -214,6 +241,7 @@
     "id": "308043090",
     "fullName": "אורית בורוכוב",
     "class": "טכנולוגיות",
+    "job": "",
     "laptop": [
       {
         "primary": true,
@@ -226,6 +254,7 @@
     "id": "319544193",
     "fullName": "אורית שושן",
     "class": "כספים",
+    "job": "",
     "laptop": [
       {
         "primary": true,
@@ -238,6 +267,7 @@
     "id": "038533162",
     "fullName": "אורן אשכנזי",
     "class": "טכנולוגיות",
+    "job": "",
     "laptop": [
       {
         "primary": true,
@@ -255,6 +285,7 @@
     "id": "031845720",
     "fullName": "אזאגי אהרון - ארן",
     "class": "רדיו",
+    "job": "",
     "laptop": [
       {
         "primary": true,
@@ -267,6 +298,7 @@
     "id": "023847775",
     "fullName": "איגור ברנבוים ",
     "class": "תפעול",
+    "job": "",
     "laptop": [
       {
         "primary": true,
@@ -279,6 +311,7 @@
     "id": "027821230",
     "fullName": "אילון אהרון",
     "class": "תפעול",
+    "job": "",
     "laptop": [
       {
         "primary": true,
@@ -291,6 +324,7 @@
     "id": "027357730",
     "fullName": "איליה שפירא",
     "class": "רדיו",
+    "job": "",
     "laptop": [
       {
         "primary": true,

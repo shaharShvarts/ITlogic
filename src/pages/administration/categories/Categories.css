@@ -1,0 +1,7 @@
+.categories {
+  /* position: relative; */
+  height: calc(100vh - 90px);
+  /* flex-wrap: wrap;
+  background-color: #ffffff; */
+  /* padding-top: 20px; */
+}

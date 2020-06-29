@@ -1,0 +1,27 @@
+.drop-zone img {
+  object-fit: cover;
+}
+
+.drop-zone {
+  width: 150px;
+  height: 150px;
+  border: 3px dotted #999;
+  color: #999;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.drop-zone:hover,
+.drop-zone.drop-over {
+  border: 3px dotted #759138;
+  color: #000;
+  cursor: pointer;
+}
+
+.drop-zone.done {
+  border: 3px solid #759138;
+}

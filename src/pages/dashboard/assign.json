@@ -1,0 +1,24 @@
+[
+  {
+    "id": "1",
+    "userId": "028584605",
+    "products": [
+      {
+        "productId": 1,
+        "primary": true,
+        "assignedBy": "מיטל",
+        "assignedAt": "23/06/2020",
+        "modifiedBy": "מיטל",
+        "modifiedAt": "24/06/2020"
+      },
+      {
+        "productId": 1,
+        "primary": false,
+        "assignedBy": "מיטל",
+        "assignedAt": "23/06/2020",
+        "modifiedBy": "מיטל",
+        "modifiedAt": "24/06/2020"
+      }
+    ]
+  }
+]

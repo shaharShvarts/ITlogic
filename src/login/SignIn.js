@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import shark from "../img/shark512.png";
 
 import "./SignIn.css";
 
@@ -16,7 +15,8 @@ function SignIn({ setLogin }) {
     e.preventDefault();
     setLoading(true);
     setTimeout(() => {
-      state.email === "shahar" && state.password === "12345"
+      String(state.email).toUpperCase() === String("shahar").toUpperCase() &&
+      state.password === "12345"
         ? setLogin(
             sessionStorage.setItem(
               "loginSession",
@@ -29,7 +29,7 @@ function SignIn({ setLogin }) {
   };
 
   const handleChange = (e) => {
-    const value = e.target.value;
+    let value = e.target.value;
     setState({
       ...state,
       [e.target.name]: value,
@@ -55,8 +55,7 @@ function SignIn({ setLogin }) {
       </section>
 
       <div className="box">
-        {/* <img src={shark} alt="shark" /> */}
-        <i class="fas fa-laptop logo"></i>
+        <i className="fas fa-laptop logo"></i>
         <h1>ITlogic's</h1>
         <h2>מערכת לניהול ציוד</h2>
         <form

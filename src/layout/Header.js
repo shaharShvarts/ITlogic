@@ -11,7 +11,10 @@ function Header() {
     <header className="layout-header">
       <div className="info">
         <div id="avatar" title="פרופיל משתמש">
-          <img src="https://yt3.ggpht.com/a/AATXAJzKhBvL2IjxTNudpRvZAE1y4ZIlpV8Cgk1Eqg=s100-c-k-c0xffffffff-no-rj-mo" />
+          <img
+            alt="avatar"
+            src="https://yt3.ggpht.com/a/AATXAJzKhBvL2IjxTNudpRvZAE1y4ZIlpV8Cgk1Eqg=s100-c-k-c0xffffffff-no-rj-mo"
+          />
         </div>
         <div id="messages" title="הודעות חדשות">
           <i className="far fa-envelope"></i>

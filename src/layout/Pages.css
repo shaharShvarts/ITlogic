@@ -1,5 +1,8 @@
 .layout-pages {
   grid-area: layout-pages;
-  background-color: #e2e2e2;
+  /* background-color: #ffffff; */
   padding: 20px;
+  /* background-image: linear-gradient(to right top, #5a5a5a, #dedede); */
+  /* background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #8cb23c, #a8eb12); */
+  background-color: #eeedef;
 }
