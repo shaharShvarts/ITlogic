@@ -16,7 +16,7 @@ function Navbar() {
       <nav>
         <li>
           <Redirect
-            to="/"
+            to="/ITlogic"
             className={active === "dashboard" ? "active" : "false"}
             onClick={() => setActive("dashboard")}
           >

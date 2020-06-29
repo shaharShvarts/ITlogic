@@ -22,7 +22,7 @@ const Pages = () => {
       onDragStart={(e) => e.preventDefault()}
     >
       <Switch>
-        <Route exact path="/" component={Dashboard} />
+        <Route exact path="/ITlogic" component={Dashboard} />
         <Route exact path="/order" component={Order} />
         <Route exact path="/stock" component={Stock} />
         <Route exact path="/administration/users" component={Users} />
