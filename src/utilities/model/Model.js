@@ -101,7 +101,7 @@ const Model = ({ children, isOpen, setIsOpen }) => {
     model = null;
   }
 
-  return <div>{model}</div>;
+  return <>{model}</>;
 };
 
 export default Model;

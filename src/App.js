@@ -23,7 +23,7 @@ function App() {
 
   return (
     <HashRouter>
-      <Redirect to="/ITlogic" />
+      <Redirect to="/" />
       <div className="wrapper">
         <Navbar />
         <Header />

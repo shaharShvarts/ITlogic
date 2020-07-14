@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
 
+// @material-ui
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Table from "@material-ui/core/Table";
@@ -10,14 +11,17 @@ import TableHead from "@material-ui/core/TableHead";
 import TablePagination from "@material-ui/core/TablePagination";
 import TableRow from "@material-ui/core/TableRow";
 
+// Dependencies
 import Model from "../../../utilities/model/Model";
-import CategoryEdit from "./CategoryEdit";
-import CategoryDelete from "./CategoryDelete";
+import ProductModel from "./ProductModel";
+
+// context
+import { ProductsContext } from "../../../context/ProductsState";
+import { CategoriesContext } from "../../../context/CategoriesState";
 
 const useStyles = makeStyles({
   root: {
     width: "100%",
-    marginTop: 40,
   },
   container: {
     maxHeight: 440,
@@ -36,13 +40,14 @@ const useStyles = makeStyles({
         color: "var(--accent-color)",
       },
     },
-    "& table tr th": {
+    "& .productsTable tr th": {
       backgroundColor: "var(--accent-color)",
       color: "#fff",
       fontWeight: "bold",
     },
-    "& table tr td,table tr th": {
+    "& .productsTable tr td,.productsTable tr th": {
       textAlign: "center",
+      minWidth: 100,
     },
   },
   toolBar: {
@@ -67,20 +72,36 @@ const useStyles = makeStyles({
   },
 });
 
-const CategoriesTable = ({ table, setTable, columns }) => {
+const ProductsTable = () => {
   const classes = useStyles();
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
   const [isOpen, setIsOpen] = useState(false);
   const [modelData, setModelData] = useState({});
+  const [modelContent, setModelContent] = useState("");
 
-  const categoryEdit = (curId, curImage, curCategory) => {
+  const { columns, productsTable, getProductsTable } = useContext(
+    ProductsContext
+  );
+
+  const { categoriesTable, getCategoriesTable } = useContext(CategoriesContext);
+
+  const productEdit = (
+    curId,
+    curImage,
+    curModel,
+    curCategoryId,
+    curCategory
+  ) => {
     setIsOpen(() => true);
-    setModelData({ curId, curImage, curCategory });
+    setModelContent(() => "edit");
+    setModelData({ curId, curImage, curModel, curCategoryId, curCategory });
   };
 
-  const categoryDelete = () => {
-    console.log("");
+  const productDelete = (curId, curImage, curModel) => {
+    setIsOpen(() => true);
+    setModelContent(() => "delete");
+    setModelData({ curId, curImage, curModel });
   };
 
   const handleChangePage = (event, newPage) => {
@@ -92,12 +113,18 @@ const CategoriesTable = ({ table, setTable, columns }) => {
     setPage(0);
   };
 
+  useEffect(() => {
+    getCategoriesTable();
+    getProductsTable();
+  }, []); // eslint-disable-next-line
+
   return (
     <Paper className={classes.root}>
       <TableContainer className={classes.container}>
-        <Table stickyHeader aria-label="sticky table">
+        <Table stickyHeader aria-label="sticky" className="productsTable">
           <TableHead>
             <TableRow>
+              <TableCell>פעולות</TableCell>
               {columns.map((column) => (
                 <TableCell
                   key={column.id}
@@ -111,10 +138,13 @@ const CategoriesTable = ({ table, setTable, columns }) => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {table &&
-              table
+            {productsTable &&
+              productsTable
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row, index) => {
+                  const field = categoriesTable.find(
+                    (item) => item.id === row.categoryId
+                  );
                   return (
                     <TableRow hover role="checkbox" tabIndex={-1} key={index}>
                       <TableCell>
@@ -123,35 +153,51 @@ const CategoriesTable = ({ table, setTable, columns }) => {
                             className="fas fa-pen edit"
                             title="עריכה"
                             onClick={() =>
-                              categoryEdit(row.id, row.image, row.category)
+                              productEdit(
+                                row.id,
+                                row.image,
+                                row.model,
+                                row.categoryId,
+                                field.category
+                              )
                             }
                           ></i>
                           <i
                             className="fas fa-trash delete"
                             title="מחיקה"
-                            onClick={(e) => categoryDelete(row.id)}
+                            onClick={() =>
+                              productDelete(row.id, row.image, row.model)
+                            }
                           ></i>
                         </div>
                       </TableCell>
-                      <TableCell>
-                        <img
-                          height={50}
-                          src={row.image}
-                          alt={row.category}
-                          title={row.category}
-                          style={{ margin: "auto" }}
-                        />
-                      </TableCell>
-                      <TableCell>{row.category}</TableCell>
-                      <TableCell>{row.createdBy}</TableCell>
-                      <TableCell>{row.createdAt}</TableCell>
-                      <TableCell>{row.modifiedBy}</TableCell>
-                      <TableCell>{row.modifiedAt}</TableCell>
+                      {columns.map((column) => {
+                        const field = categoriesTable.find(
+                          (item) => item.id === row.categoryId
+                        );
+                        const value = row[column.id];
+                        return (
+                          <TableCell key={column.id}>
+                            {column.id === "image" ? (
+                              <img
+                                src={row.image}
+                                alt={row.model}
+                                title={row.model}
+                                style={{ margin: "auto", height: "50px" }}
+                              />
+                            ) : column.id === "category" ? (
+                              field.category
+                            ) : (
+                              value
+                            )}
+                          </TableCell>
+                        );
+                      })}
                     </TableRow>
                   );
                 })}
 
-            {table.length === 0 && (
+            {productsTable.length === 0 && (
               <TableRow>
                 <TableCell className={classes.emptyData} colSpan="100%">
                   <span>אין נתונים להצגה</span>
@@ -162,12 +208,12 @@ const CategoriesTable = ({ table, setTable, columns }) => {
           </TableBody>
         </Table>
       </TableContainer>
-      {table.length !== 0 && (
+      {productsTable.length !== 0 && (
         <TablePagination
           classes={{ toolbar: classes.toolBar, spacer: classes.spacer }}
           rowsPerPageOptions={[10, 25, 100]}
           component="div"
-          count={table.length}
+          count={productsTable.length}
           rowsPerPage={rowsPerPage}
           page={page}
           onChangePage={handleChangePage}
@@ -175,16 +221,14 @@ const CategoriesTable = ({ table, setTable, columns }) => {
         />
       )}
       <Model isOpen={isOpen} setIsOpen={setIsOpen}>
-        <CategoryEdit
-          table={table}
-          setTable={setTable}
+        <ProductModel
+          modelContent={modelContent}
           modelData={modelData}
           setIsOpen={setIsOpen}
         />
-        {/* <CategoryDelete /> */}
       </Model>
     </Paper>
   );
 };
 
-export default CategoriesTable;
+export default ProductsTable;

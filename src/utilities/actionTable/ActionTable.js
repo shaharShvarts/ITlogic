@@ -13,20 +13,17 @@ import TableRow from "@material-ui/core/TableRow";
 
 // Dependencies
 import Model from "../model/Model";
-import EditCategory from "../../pages/administration/categories/EditCategory";
-
-// import CategoriesModel from "../../pages/administration/categories/CategoriesModel";
+import CategoryModel from "../../pages/administration/categories/CategoryModel";
 
 const useStyles = makeStyles({
   root: {
     width: "100%",
-    marginTop: 40,
   },
   container: {
     maxHeight: 440,
     "& .action": {
       display: "flex",
-      justifyContent: "space-evenly",
+      justifyContent: "space-between",
       "& img": {
         width: 20,
         cursor: "pointer",
@@ -71,7 +68,7 @@ const useStyles = makeStyles({
   },
 });
 
-const ActionTable = ({ table, setTable, columns }) => {
+const ActionTable = ({ table, setTable, columns, model }) => {
   const classes = useStyles();
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
@@ -85,9 +82,10 @@ const ActionTable = ({ table, setTable, columns }) => {
     setModelData({ curId, curImage, curCategory });
   };
 
-  const categoryDelete = () => {
+  const categoryDelete = (curId, curImage, curCategory) => {
     setIsOpen(() => true);
     setModelContent(() => "delete");
+    setModelData({ curId, curImage, curCategory });
   };
 
   const handleChangePage = (event, newPage) => {
@@ -137,7 +135,9 @@ const ActionTable = ({ table, setTable, columns }) => {
                           <i
                             className="fas fa-trash delete"
                             title="מחיקה"
-                            onClick={(e) => categoryDelete(row.id)}
+                            onClick={() =>
+                              categoryDelete(row.id, row.image, row.category)
+                            }
                           ></i>
                         </div>
                       </TableCell>
@@ -186,12 +186,23 @@ const ActionTable = ({ table, setTable, columns }) => {
         />
       )}
       <Model isOpen={isOpen} setIsOpen={setIsOpen}>
-        <EditCategory
-          table={table}
-          setTable={setTable}
-          modelData={modelData}
-          setIsOpen={setIsOpen}
-        />
+        {(() => {
+          switch (model) {
+            case "categories":
+              return (
+                <CategoryModel
+                  modelContent={modelContent}
+                  table={table}
+                  setTable={setTable}
+                  modelData={modelData}
+                  setIsOpen={setIsOpen}
+                />
+              );
+
+            default:
+              break;
+          }
+        })()}
       </Model>
     </Paper>
   );

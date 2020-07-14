@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef, useCallback } from "react";
+import React, { useEffect, useState, useRef } from "react";
 
 import "./UploadImage.css";
 
@@ -17,23 +17,16 @@ const UploadImage = ({ image, setImage }) => {
     }
   }, [image]);
 
-  const callbackImage = useCallback(
-    (e) => {
-      setImage(e.target.result);
-    },
-    [setImage]
-  );
-
   useEffect(() => {
     if (file) {
       const reader = new FileReader();
       reader.readAsDataURL(file);
       reader.onload = (e) => {
         setDragState(() => "drop-zone done");
-        callbackImage(e);
+        setImage(e.target.result);
       };
     }
-  }, [file, callbackImage]);
+  }, [file, setImage]);
 
   return (
     <>

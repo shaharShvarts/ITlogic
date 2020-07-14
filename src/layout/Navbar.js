@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import logo from "../img/phi_logo.svg";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import "./Navbar.css";
 
@@ -15,13 +15,13 @@ function Navbar() {
       </a>
       <nav>
         <li>
-          <Redirect
-            to="/ITlogic"
+          <Link
+            to="/"
             className={active === "dashboard" ? "active" : "false"}
             onClick={() => setActive("dashboard")}
           >
             <i className="fas fa-tachometer-alt"></i>דף הבית
-          </Redirect>
+          </Link>
         </li>
         <li>
           <Link
@@ -69,7 +69,7 @@ function Navbar() {
                   className={subActive === "categories" ? "active" : "false"}
                   onClick={() => setSubActive("categories")}
                 >
-                  <i className="fas fa-chevron-left"></i>ניהול קטגוריות
+                  <i className="fas fa-chevron-left"></i>קטגוריות
                 </Link>
               </li>
               <li>
@@ -78,7 +78,7 @@ function Navbar() {
                   className={subActive === "products" ? "active" : "false"}
                   onClick={() => setSubActive("products")}
                 >
-                  <i className="fas fa-chevron-left"></i>ניהול מוצרים
+                  <i className="fas fa-chevron-left"></i>מוצרים
                 </Link>
               </li>
             </ul>

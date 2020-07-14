@@ -1,36 +1,40 @@
 [
   {
     "id": "999999999",
+    "image": "",
     "user": "warehouse",
     "fullName": "מחסן",
-    "class": "מחסן",
+    "department": "מחסן",
     "job": "",
     "email": "",
     "mobile ": ""
   },
   {
     "id": "028584605",
+    "image": "",
     "user": "MeravCarth",
     "fullName": "מירב קרת",
-    "class": "תפעול",
+    "department": "תפעול",
     "job": "מנהל",
     "email": "meravc@gmail.com",
     "mobile ": "+972 52-3082-367"
   },
   {
     "id": "024522120",
+    "image": "",
     "user": "AviBudnik",
     "fullName": "אבי בודניק",
-    "class": "תפעול",
+    "department": "תפעול",
     "job": "סגן מנהל",
     "email": "avib@gmail.com",
     "mobile": "+972 53-7754-138"
   },
   {
     "id": "038550364",
+    "image": "",
     "user": "AviramNadler",
     "fullName": "אבירם נדלר",
-    "class": "רדיו",
+    "department": "רדיו",
     "job": "תומך",
     "email": "aviramn@gmail.com",
     "mobile": "+972 54-7044-449"

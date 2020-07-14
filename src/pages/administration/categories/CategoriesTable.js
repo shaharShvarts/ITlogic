@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
 
+// @material-ui
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Table from "@material-ui/core/Table";
@@ -10,14 +11,18 @@ import TableHead from "@material-ui/core/TableHead";
 import TablePagination from "@material-ui/core/TablePagination";
 import TableRow from "@material-ui/core/TableRow";
 
+// Dependencies
 import Model from "../../../utilities/model/Model";
-import CategoryEdit from "./CategoryEdit";
-import CategoryDelete from "./CategoryDelete";
+import CategoryModel from "./CategoryModel";
+
+// context
+import { CategoriesContext } from "../../../context/CategoriesState";
 
 const useStyles = makeStyles({
   root: {
     width: "100%",
-    marginTop: 40,
+    border: "2px solid #759138",
+    boxShadow: "none",
   },
   container: {
     maxHeight: 440,
@@ -36,13 +41,14 @@ const useStyles = makeStyles({
         color: "var(--accent-color)",
       },
     },
-    "& table tr th": {
+    "& .categoriesTable tr th": {
       backgroundColor: "var(--accent-color)",
       color: "#fff",
       fontWeight: "bold",
     },
-    "& table tr td,table tr th": {
+    "& .categoriesTable tr td,.categoriesTable tr th": {
       textAlign: "center",
+      minWidth: 100,
     },
   },
   toolBar: {
@@ -67,20 +73,28 @@ const useStyles = makeStyles({
   },
 });
 
-const CategoriesTable = ({ table, setTable, columns }) => {
+const CategoriesTable = () => {
   const classes = useStyles();
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
   const [isOpen, setIsOpen] = useState(false);
   const [modelData, setModelData] = useState({});
+  const [modelContent, setModelContent] = useState("");
+
+  const { columns, categoriesTable, getCategoriesTable } = useContext(
+    CategoriesContext
+  );
 
   const categoryEdit = (curId, curImage, curCategory) => {
-    setIsOpen(() => true);
+    setIsOpen((prevIsOpen) => (prevIsOpen = true));
+    setModelContent(() => "edit");
     setModelData({ curId, curImage, curCategory });
   };
 
-  const categoryDelete = () => {
-    console.log("");
+  const categoryDelete = (curId, curImage, curCategory) => {
+    setIsOpen(() => true);
+    setModelContent((prevModelContent) => (prevModelContent = "delete"));
+    setModelData({ curId, curImage, curCategory });
   };
 
   const handleChangePage = (event, newPage) => {
@@ -92,12 +106,17 @@ const CategoriesTable = ({ table, setTable, columns }) => {
     setPage(0);
   };
 
+  useEffect(() => {
+    getCategoriesTable();
+  }, []);
+
   return (
     <Paper className={classes.root}>
       <TableContainer className={classes.container}>
-        <Table stickyHeader aria-label="sticky table">
+        <Table stickyHeader aria-label="sticky" className="categoriesTable">
           <TableHead>
             <TableRow>
+              <TableCell>פעולות</TableCell>
               {columns.map((column) => (
                 <TableCell
                   key={column.id}
@@ -111,8 +130,8 @@ const CategoriesTable = ({ table, setTable, columns }) => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {table &&
-              table
+            {categoriesTable &&
+              categoriesTable
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row, index) => {
                   return (
@@ -129,29 +148,34 @@ const CategoriesTable = ({ table, setTable, columns }) => {
                           <i
                             className="fas fa-trash delete"
                             title="מחיקה"
-                            onClick={(e) => categoryDelete(row.id)}
+                            onClick={() =>
+                              categoryDelete(row.id, row.image, row.category)
+                            }
                           ></i>
                         </div>
                       </TableCell>
-                      <TableCell>
-                        <img
-                          height={50}
-                          src={row.image}
-                          alt={row.category}
-                          title={row.category}
-                          style={{ margin: "auto" }}
-                        />
-                      </TableCell>
-                      <TableCell>{row.category}</TableCell>
-                      <TableCell>{row.createdBy}</TableCell>
-                      <TableCell>{row.createdAt}</TableCell>
-                      <TableCell>{row.modifiedBy}</TableCell>
-                      <TableCell>{row.modifiedAt}</TableCell>
+                      {columns.map((column) => {
+                        const value = row[column.id];
+                        return (
+                          <TableCell key={column.id}>
+                            {column.id === "image" ? (
+                              <img
+                                src={row.image}
+                                alt={row.category}
+                                title={row.category}
+                                style={{ margin: "auto", height: "50px" }}
+                              />
+                            ) : (
+                              value
+                            )}
+                          </TableCell>
+                        );
+                      })}
                     </TableRow>
                   );
                 })}
 
-            {table.length === 0 && (
+            {categoriesTable.length === 0 && (
               <TableRow>
                 <TableCell className={classes.emptyData} colSpan="100%">
                   <span>אין נתונים להצגה</span>
@@ -162,12 +186,12 @@ const CategoriesTable = ({ table, setTable, columns }) => {
           </TableBody>
         </Table>
       </TableContainer>
-      {table.length !== 0 && (
+      {categoriesTable.length !== 0 && (
         <TablePagination
           classes={{ toolbar: classes.toolBar, spacer: classes.spacer }}
           rowsPerPageOptions={[10, 25, 100]}
           component="div"
-          count={table.length}
+          count={categoriesTable.length}
           rowsPerPage={rowsPerPage}
           page={page}
           onChangePage={handleChangePage}
@@ -175,13 +199,11 @@ const CategoriesTable = ({ table, setTable, columns }) => {
         />
       )}
       <Model isOpen={isOpen} setIsOpen={setIsOpen}>
-        <CategoryEdit
-          table={table}
-          setTable={setTable}
+        <CategoryModel
+          modelContent={modelContent}
           modelData={modelData}
           setIsOpen={setIsOpen}
         />
-        {/* <CategoryDelete /> */}
       </Model>
     </Paper>
   );

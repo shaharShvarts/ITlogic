@@ -1,12 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import UploadImage from "../../../utilities/uploadImage/UploadImage";
+
+import { CategoriesContext } from "../../../context/CategoriesState";
 
 import "./EditCategory.css";
 
-const EditCategory = ({ table, setTable, modelData, setIsOpen }) => {
+const EditCategory = ({ modelData, setIsOpen }) => {
   const [image, setImage] = useState(null);
   const [category, setCategory] = useState("");
-  const [error, setError] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const { categoriesTable, editCategory } = useContext(CategoriesContext);
 
   const saveCategory = (e) => {
     e.preventDefault();
@@ -23,77 +27,67 @@ const EditCategory = ({ table, setTable, modelData, setIsOpen }) => {
     const { curId } = modelData;
     if (modelData.curCategory !== category) {
       if (validForm()) {
-        setTable(() =>
-          table.map((obj) =>
-            obj.id === curId
-              ? {
-                  ...obj,
-                  image,
-                  category,
-                  modifiedBy: user,
-                  modifiedAt: curDate,
-                }
-              : obj
-          )
-        );
-        setIsOpen(() => false);
+        editCategory(curId, {
+          image,
+          category,
+          modifiedBy: user,
+          modifiedAt: curDate,
+        });
+        setIsOpen((preIsOpen) => (preIsOpen = false));
       }
     } else {
-      setTable(() =>
-        table.map((obj) => (obj.id === curId ? { ...obj, image } : obj))
-      );
-      setIsOpen(() => false);
+      editCategory(curId, {
+        image,
+        modifiedBy: user,
+        modifiedAt: curDate,
+      });
+      setIsOpen((preIsOpen) => (preIsOpen = false));
     }
   };
 
   const validForm = () => {
     if (category !== "") {
-      let categories = JSON.parse(localStorage.getItem("categories"));
-
-      if (categories !== null) {
-        const result = categories.find(
+      if (categoriesTable !== null) {
+        const result = categoriesTable.find(
           (item) =>
             item.category.toUpperCase().trim() === category.toUpperCase().trim()
         );
 
         if (result !== undefined) {
-          setError("⚠️ קטגוריה קיימת");
+          setErrorMessage("⚠️ קטגוריה קיימת");
           console.log("result22");
           return false;
         } else {
-          setError(() => "");
+          setErrorMessage(() => "");
           return true;
         }
       } else {
-        setError(() => "");
+        setErrorMessage(() => "");
         return true;
       }
     } else {
-      setError("⚠️ נא הכנס שם קטגוריה");
+      setErrorMessage("⚠️ נא הכנס שם קטגוריה");
       return false;
     }
   };
 
   useEffect(() => {
-    if (modelData) {
-      const { curImage, curCategory } = modelData;
-      setImage(curImage);
-      setCategory(curCategory);
-    }
-  }, [modelData]);
+    const { curImage, curCategory } = modelData;
+    setImage(curImage);
+    setCategory(curCategory);
+  }, []);
 
   return (
-    <div className="new-categories">
-      <form onSubmit={saveCategory} className="category-form">
-        <label htmlFor="category">שם קטגוריה</label>
+    <div className="edit-categories">
+      <form onSubmit={saveCategory} className="edit-category-form">
+        <label>שם קטגוריה</label>
         <input
           type="text"
           value={category}
           onChange={(e) => setCategory(e.target.value)}
-          name="category"
         />
         <input type="submit" value="שמור קטגוריה" />
-        <div className="new-categories-error">{error}</div>
+        <div className="edit-categories-error">{errorMessage}</div>
       </form>
       <UploadImage image={image} setImage={setImage} />
     </div>

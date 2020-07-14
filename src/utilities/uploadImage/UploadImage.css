@@ -1,5 +1,8 @@
 .drop-zone img {
-  object-fit: cover;
+  /* object-fit: scale-down;
+  height: 100%; */
+  /* transform: scale(0.85); */
+  width: 145px;
 }
 
 .drop-zone {
@@ -11,8 +14,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 10px;
+  border-radius: 100%;
   background-color: #fff;
+  overflow: hidden;
 }
 
 .drop-zone:hover,
