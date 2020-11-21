@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "categoryId": 1,
+    "image": "",
+    "model": "HP - Elitebook 840 G3",
+    "createdBy": "מיטל",
+    "createdAt": "23/06/2020",
+    "modifiedBy": "מיטל",
+    "modifiedAt": "23/06/2020"
+  },
+  {
+    "id": 2,
+    "categoryId": 2,
+    "image": "",
+    "model": "מסך 27'",
+    "createdBy": "שובל",
+    "createdAt": "23/06/2020",
+    "modifiedBy": "מיטל",
+    "modifiedAt": "23/06/2020"
+  },
+  {
+    "id": 3,
+    "categoryId": 2,
+    "image": "",
+    "model": "מסך 24'",
+    "createdBy": "מיטל",
+    "createdAt": "23/06/2020",
+    "modifiedBy": "מיטל",
+    "modifiedAt": "23/06/2020"
+  },
+  {
+    "id": 4,
+    "categoryId": 3,
+    "image": "",
+    "model": "Logitech MX Master",
+    "createdBy": "שובל",
+    "createdAt": "23/06/2020",
+    "modifiedBy": "מיטל",
+    "modifiedAt": "23/06/2020"
+  },
+  {
+    "id": 5,
+    "categoryId": 4,
+    "image": "",
+    "model": "dell Core I7-8700",
+    "createdBy": "מיטל",
+    "createdAt": "23/06/2020",
+    "modifiedBy": "מיטל",
+    "modifiedAt": "23/06/2020"
+  }
+]

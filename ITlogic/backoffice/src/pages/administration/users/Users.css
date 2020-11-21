@@ -1,0 +1,28 @@
+.users {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  height: calc(100vh - 100px);
+  align-content: space-evenly;
+  flex-wrap: wrap;
+  width: calc(100vw - 328px);
+  justify-content: center;
+}
+
+/* header.control {
+  display: flex;
+  margin: 15px 0;
+}
+
+header.control h2 {
+  color: #5d5b5b;
+}
+
+button.btn.btn-add {
+  background-color: #03a9f4;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: auto;
+} */

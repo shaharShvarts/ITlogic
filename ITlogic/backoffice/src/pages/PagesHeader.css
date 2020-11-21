@@ -1,0 +1,41 @@
+.layout-pages-header {
+  display: flex;
+  margin: 15px 0;
+  gap: 25px;
+}
+
+.layout-pages-header .breadcrumbs.active {
+  text-decoration: underline;
+  cursor: pointer;
+  margin-left: -25px;
+}
+
+.layout-pages-header .btn.btn-add {
+  background-color: #03a9f4;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  max-height: 36px;
+}
+
+.layout-pages-header .search,
+.layout-pages-header .filter {
+  padding: 0px 30px;
+  outline: 1px solid #cbcbcb;
+}
+
+.layout-pages-header .filter {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAQlBMVEUAAAAfHx8aGhoXFxcTExMrKysgICAGBgYpKSkODg4lJSUzMzMgICAuLi4QEBAkJCQMDAwpKSkeHh4ZGRkTExMvLy/4XCUaAAAAD3RSTlMAD+8v78/Pz+/PX09PPx+pjAUiAAAAXUlEQVQY052NSQ7AIAwDHejGvv//q02hajkzUiKPL8YKhv5MBnBtp8/35nClxM3rKV3QIYSDuh8cNWBFztyw5ywsGClKEXJ8dORW6/Yc+8CryCg/7Z8xngTMDfsqN7m6AyseT01SAAAAAElFTkSuQmCC);
+  background-repeat: no-repeat;
+  background-position: 10px;
+  width: 160px;
+  padding: 10px;
+}
+
+.layout-pages-header .search {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAMAAACeyVWkAAAARVBMVEX///+9vb23t7e/v7+5ubm7u7vy8vLJycn8/Pz4+Pjv7+/19fXd3d3p6enY2NjExMTNzc3Hx8fGxsbBwcHj4+Pi4uLQ0NCpvMtFAAAAqklEQVQY032PSRLDIAwEGWmEl4DxkuT/Tw02hpBL+gBTXUI1uJMxDKrbMrmeRQwZk7WTA7Mhz1O/k1RjmP0rSxtuOQoslbiaylxiMLA+O2DrvRUWqo2ElKSgd22byngldNY1u4PPKue2YTFoaw5sJT1E7X3XoTLWAVOmXNMPVHCs72AKijBfCpmq3gUX5I+Om2RSnOXUD9eYrpFO9/g/+uhE7Y/6rZ4pwX8AS/UEWYqyI7kAAAAASUVORK5CYII=);
+  background-repeat: no-repeat;
+  background-position: 225px 8px;
+  width: 250px;
+}

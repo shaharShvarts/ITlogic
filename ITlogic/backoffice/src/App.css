@@ -1,0 +1,23 @@
+:root {
+  --accent-color: #759138;
+  --layout-navbar: #2f2f2f;
+  --active: #1f1f1f;
+}
+
+.wrapper {
+  font-family: "Rubik", sans-serif;
+  height: 100vh;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 18em 1fr;
+  grid-template-rows: 50px 1fr;
+  grid-template-areas:
+    "layout-navbar layout-header"
+    "layout-navbar layout-pages";
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+}

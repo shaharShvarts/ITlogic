@@ -1,0 +1,13 @@
+.user h1 {
+  text-align: center;
+  color: #759138;
+  text-shadow: 2px 1px #000;
+}
+
+.dropDownsMenu ul {
+  list-style: none;
+  overflow: auto;
+  height: 245px;
+  margin: 10px 0px;
+  width: 185px;
+}

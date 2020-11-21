@@ -1,0 +1,213 @@
+:root {
+  --accent-color: #0379af;
+}
+
+.container {
+  display: flex;
+  color: #fff;
+  height: 100vh;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-family: "M PLUS 1p", sans-serif;
+  /* background: url(../img/bg_login.jpg) center center/cover; */
+  /* background-image: linear-gradient(45deg, #2a9f45, #92cf50); */
+  background-image: linear-gradient(45deg, #5a5a5a, #dedede);
+}
+
+.error-box,
+.box {
+  position: relative;
+  width: 400px;
+  margin-top: 30px;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 40px;
+  border-radius: 10px;
+}
+
+.error-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.8s ease;
+  padding: 20px;
+}
+
+.error-box .close {
+  position: absolute;
+  right: 25px;
+  font-size: 20px;
+}
+
+.message {
+  margin-right: 50px;
+}
+
+.error-box .close:hover {
+  color: var(--accent-color);
+  cursor: pointer;
+}
+
+.error-box .alert {
+  margin: 0 10px;
+}
+
+/* .box img {
+  margin: auto;
+  height: 100px;
+} */
+
+i.fas.fa-laptop.logo {
+  font-size: 64px;
+  width: 100%;
+  text-align: center;
+  display: inline-block;
+  border-bottom: 10px;
+  padding: 10px;
+}
+
+.box h1,
+.box h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.334;
+  letter-spacing: 0.2em;
+  text-align: center;
+  text-shadow: 2px 2px #131212;
+}
+
+.box h2 {
+  font-size: 1.6rem;
+  color: #92cf50;
+  margin-bottom: 30px;
+}
+
+.box .inputBox {
+  position: relative;
+  direction: ltr;
+  outline: none;
+}
+
+.box .show-password {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.box .show-password:hover {
+  color: #03a9f4;
+}
+
+.box .inputBox input {
+  width: 100%;
+  padding: 10px 0;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  letter-spacing: 1px;
+  border-bottom: 1.5px solid #fff;
+  background: transparent;
+  transition: all 0.5s ease;
+}
+
+.box .inputBox label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  pointer-events: none;
+  transition: all 0.5s ease;
+}
+
+.box .inputBox input:focus {
+  border-bottom: 1.5px solid #03a9f4;
+}
+
+.box .inputBox input:focus ~ label,
+.box .inputBox input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #03a9f4;
+  font-size: 12px;
+}
+
+.box button {
+  width: 100%;
+  padding: 0.875em;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 0.3em;
+  transition: all 0.8s ease;
+  position: relative;
+  background-color: #fff;
+  color: var(--accent-color);
+}
+
+.box button p {
+  display: inline-block;
+}
+
+.box button:hover,
+.box button:focus {
+  color: #fff;
+  background-color: var(--accent-color);
+}
+
+/* autofill */
+.inputBox input:-webkit-autofill,
+.inputBox input:-webkit-autofill:hover,
+.inputBox input:-webkit-autofill:focus,
+.inputBox input:-webkit-autofill:active {
+  background-color: transparent !important;
+  transition: background-color 5000s ease-in-out 0s !important;
+  box-shadow: 0 0 0 50px rgba(0, 0, 0, 0) inset !important;
+  -webkit-text-fill-color: rgb(255, 255, 255) !important;
+}
+
+.inputBox input::-ms-reveal {
+  display: none;
+}
+
+.box .fa-spinner {
+  animation: spin 1s linear infinite;
+  position: absolute;
+  left: 50px;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 440px) {
+  .error-box,
+  .box {
+    width: 250px;
+  }
+
+  .box h1,
+  .box h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
+  .box h2 {
+    font-size: 1rem;
+    color: #92cf50;
+  }
+
+  .error-box {
+    font-size: 0.8rem;
+  }
+
+  .message {
+    margin-right: 24px;
+    font-size: 12px;
+  }
+}

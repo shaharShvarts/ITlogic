@@ -1,0 +1,10 @@
+.stock {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 100px);
+  align-content: space-evenly;
+  flex-wrap: wrap;
+  width: calc(100vw - 328px);
+  justify-content: center;
+}
